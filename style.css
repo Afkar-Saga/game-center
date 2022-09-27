@@ -1,0 +1,25 @@
+body {
+    font-family: monospace;
+    background-color: orange;
+    color: red;
+    margin: auto;
+    text-align: center;
+}
+.game {
+    background-color: yellow;
+    color: darkred;
+    margin: 100px auto;
+    border: 5px solid orangered;
+    padding: 5px;
+}
+.score {
+    display: flex;
+    justify-content: space-evenly;
+}
+.score p {
+    font-size: 20px;
+    font-family: fantasy;
+}
+#options button {
+    margin: 10px 20px;
+}
