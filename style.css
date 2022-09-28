@@ -14,10 +14,13 @@ body {
 }
 .score {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+.score div {
+    width: 10vmax;
 }
 .score p {
-    font-size: 20px;
+    font-size: 15px;
     font-family: fantasy;
 }
 #options button {

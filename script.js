@@ -21,15 +21,16 @@ document.getElementById("submitGuess").onclick = function() {
         guessNum = 10;
     }
     document.getElementById("guess-num").innerHTML = guessNum;
+    document.getElementById("guessBox").value = "";
 }
 // Akhir Guess the Number
 
 // Rock Paper Scissor
+let playerScore = 0;
+let computerScore = 0;
+let tieScore = 0;
 const game = () => {
-    let playerScore = 0;
-    let computerScore = 0;
-    let tieScore = 0;
-
+    
     const playGame = () => {
         const rockBtn = document.getElementById("rock");
         const paperBtn = document.getElementById("paper");
@@ -53,43 +54,58 @@ const game = () => {
         player = player.toLowerCase();
         computer = computer.toLowerCase();
 
+        const resetScore = () => {
+            playerScore = 0;
+            computerScore = 0;
+            tieScore = 0;
+            playerScoreBoard.textContent = playerScore;
+            computerScoreBoard.textContent = computerScore;
+            tieScoreBoard.textContent = tieScore;
+        }
         if (player === computer) {
             alert("It's a Tie!");
             tieScore++;
             tieScoreBoard.textContent = tieScore;
         } else if (player == 'rock') {
             if (computer == 'paper') {
-                alert("Computer picked paper, you lose!");
+                alert("PAPER! I WIN!");
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
             } else if (computer == 'scissor') {
-                alert("Computer picked scissor, you win!");
+                alert("SCISSOR! YOU WIN!");
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
         } else if (player == 'paper') {
             if (computer == 'scissor') {
-                alert("Computer picked scissor, you lose!");
+                alert("SCISSOR! I WIN!");
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
             } else if (computer == 'rock') {
-                alert("Computer picked rock, you win!");
+                alert("ROCK! YOU WIN!");
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
         } else if (player == 'scissor') {
             if (computer == 'rock') {
-                alert("Computer picked rock, you lose!");
+                alert("ROCK! I WIN!");
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
             } else if (computer == 'paper') {
-                alert("Computer picked paper, you win!");
+                alert("PAPER! YOU WIN!");
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
         }
+        if (playerScore == '10') {
+            resetScore();
+            alert("You Win! Congrats!");
+        } else if (computerScore == '10') {
+            resetScore();
+            alert("You Lost! Try Again");
+        }
     }
-
+    
     playGame();
 }
 game();
