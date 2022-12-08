@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comic Sans MS";
+  height: 100vh;
+  background: linear-gradient(#333, black);
+  color: white;
+}
+
+.container {
+  display: flex;
+  width: 520px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+  text-align: center;
+}
+
+.currency {
+  text-align: center;
+  font-size: 3em;
+  color: aqua;
+  margin: 30px;
+}
+
+#number {
+  font-family: "Fira Code";
+  color: white;
+}
+
+.btn {
+  font-family: "Comic Sans MS", Arial, sans-serif;
+  font-size: 1.11em;
+  width: 250px;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 5px 16px;
+  background-color: white;
+  color: #333;
+  border: 3px solid black;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.btn:hover {
+  background-color: #afafaf;
+}
+
+.btn:active {
+  color: red;
+}
+
+#increase {
+  width: 100%;
+}
