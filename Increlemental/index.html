@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trying to make Incremental game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h4>Stats</h4>
+  <div id="stats"></div>
+  <hr>
+  <div class="energy">You have <span id="energyAmount">0</span> Energy</div>
+  <button onclick="increaseEnergy()">Energy</button>
+  <div class="magic">You have <span id="magicAmount">0</span> Magic</div>
+  <button onclick="buyMagicGen(1)" id="gen1">Magic Generator 1</button>
+  <button onclick="buyMagicGen(2)" id="gen2">Magic Generator 2</button>
+  <button onclick="buyMagicGen(3)" id="gen3">Magic Generator 3</button>
+  <hr>
+  <h4>Upgrades</h4>
+  <button id="hp" onclick="buyHPUpgrade()">HP <br>Cost: 10</button>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

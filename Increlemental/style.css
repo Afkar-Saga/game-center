@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comic Sans MS";
+  height: 100vh;
+  background: linear-gradient(#333, black);
+  color: white;
+}
