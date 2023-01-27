@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trying to make Incremental game</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trying to make Incremental game</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <div id="app">
+      <div class="energy">You have {{ format(player.energy) }} Energy</div>
+      <button @click="increaseEnergy">Energy</button>
+      <div class="magic">You have {{ format(player.magic) }} Magic</div>
+      <div class="magic-generator" v-for="(mg, index) in player.magicGenerators">
+        <h4 class="magic-gen-name">{{ mg.name }}</h4>
+        <span class="magic-gen-amount">Amount: {{ format(mg.amount) }}</span>
+        <span class="magic-gen-multiplier"> x{{ format(mg.mult) }}</span>
+        <span class="magic-gen-cost">Costs: {{ format(mg.cost) }} Energy</span>
+        <button @click="buyMagicGenerators(index)">Buy 1</button>
+      </div>
+    </div>
 
-<body>
-  <h4>Stats</h4>
-  <div id="stats"></div>
-  <hr>
-  <div class="energy">You have <span id="energyAmount">0</span> Energy</div>
-  <button onclick="increaseEnergy()">Energy</button>
-  <div class="magic">You have <span id="magicAmount">0</span> Magic</div>
-  <button onclick="buyMagicGen(1)" id="gen1">Magic Generator 1</button>
-  <button onclick="buyMagicGen(2)" id="gen2">Magic Generator 2</button>
-  <button onclick="buyMagicGen(3)" id="gen3">Magic Generator 3</button>
-  <hr>
-  <h4>Upgrades</h4>
-  <button id="hp" onclick="buyHPUpgrade()">HP <br>Cost: 10</button>
-
-  <script src="main.js"></script>
-</body>
-
+    <script src="js/vue.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/loop.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>

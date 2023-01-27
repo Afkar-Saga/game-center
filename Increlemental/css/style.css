@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comic Sans MS";
+  height: 100vh;
+  background: linear-gradient(#333, black);
+  color: white;
+}
+
+.magic-generator {
+  background-color: #026da6;
+  width: 200px;
+  border: 5px outset #333;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.magic-gen-name {
+  margin: 0 0 10px;
+  display: flex;
+  justify-content: center;
+}
+.magic-gen-cost {
+  display: block;
+}
