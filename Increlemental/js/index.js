@@ -25,6 +25,12 @@ createApp({
                     player.magicGenerators[i].mult *= 3
             }
         },
+        getStatPoints() {
+            if (this.player.stat_points.cost > this.player.magic) return
+            this.player.magic -= this.player.stat_points.cost
+            this.player.stat_points.amount++
+            this.player.stat_points.cost *= 10
+        },
         gameLoop() {
             gameLoop(this)
         }

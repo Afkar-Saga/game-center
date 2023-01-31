@@ -20,10 +20,24 @@
         <span class="magic-gen-cost">Costs: {{ format(mg.cost) }} Energy</span>
         <button @click="buyMagicGenerators(index)">Buy 1</button>
       </div>
+      <div class="stats-container">
+        <h3>Stats</h3>
+        <div class="stat-points">
+          <span class="stat-amount">Stat Points: {{ player.stat_points.amount }}</span>
+          <span class="stat-cost">Costs: {{ format(player.stat_points.cost) }}</span>
+          <button @click="getStatPoints">Buy 1</button>
+        </div>
+        <div class="stats" v-for="(value, key) in player.stats">
+          <span class="stat-amount">{{ value.name }}: {{ value.amount }}</span>
+          <span class="stat-cost">Costs: {{ format(value.cost) }}</span>
+          <button @click="value.upgrade()">Upgrade</button>
+        </div>
+      </div>
     </div>
 
     <script src="js/vue.js"></script>
     <script src="js/format.js"></script>
+    <script src="js/stats.js"></script>
     <script src="js/player.js"></script>
     <script src="js/loop.js"></script>
     <script src="js/index.js"></script>

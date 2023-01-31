@@ -9,18 +9,35 @@ body {
   color: white;
 }
 
-.magic-generator {
-  background-color: #026da6;
-  width: 200px;
+.magic-generator, .stat-points, .stats {
+  width: 230px;
   border: 5px outset #333;
   margin-bottom: 10px;
   padding: 10px;
 }
-.magic-gen-name {
+.magic-generator {
+  background-color: #3d1766;
+}
+.magic-gen-name, .stat-amount {
   margin: 0 0 10px;
   display: flex;
   justify-content: center;
 }
-.magic-gen-cost {
+.magic-gen-cost, .stat-cost {
   display: block;
+}
+.stats-container {
+  background-color: #310323;
+  border: 10px inset #3a3534;
+  width: 1000px;
+  display: grid;
+  justify-content: space-evenly;
+}
+.stat-points {
+  background-color: #6f1ab6;
+  margin-top: 20px;
+  grid-column: 2/4
+}
+.stats {
+  background-color: #cd0404;
 }

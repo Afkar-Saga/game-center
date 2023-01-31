@@ -3,30 +3,18 @@ var player = {
     magic: 0,
     magicGenerators: [],
     lastUpdate: Date.now(),
-    hp: {
-        amount: 10,
-        cost: 10,
-    },
-    mana: {
-        amount: 10,
-        cost: 30,
-    },
-    atk: {
-        amount: 1,
-        cost: 50,
-    },
-    def: {
-        amount: 1,
-        cost: 50,
-    },
-    elemental_power: {
+    stat_points: {
         amount: 0,
-        cost: 1000,
+        cost: 10
     },
-    elemental_resistance: {
-        amount: 0,
-        cost: 200,
-    },
+    stats: {
+        hp: new Stats("HP", 1),
+        mana: new Stats("Mana", 2),
+        atk: new Stats("Attack", 3),
+        def: new Stats("Defense", 3),
+        elemental_power: new Stats("Elemental Power", 10),
+        elemental_resistance: new Stats("Elemental Resistance", 15)
+    }
 }
 for (let i = 0; i < 3; i++) {
     let magicGen = {
@@ -34,7 +22,7 @@ for (let i = 0; i < 3; i++) {
         amount: 0,
         bought: 0,
         mult: 1,
-        cost: Math.pow(3, i + 1)
+        cost: Math.pow(Math.pow(3, i + 1), i + 1)
     }
     player.magicGenerators.push(magicGen)
 }
